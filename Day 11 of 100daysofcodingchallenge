@@ -1,0 +1,12 @@
+Question link:- https://tinyurl.com/4cprt3mm
+
+
+class Solution{
+    public:
+        int modulo(string s,int m)
+        {
+            int ans=0;
+            for(auto &i: s) ans = (ans*2 + i-'0')%m;
+            return ans;
+}
+};
