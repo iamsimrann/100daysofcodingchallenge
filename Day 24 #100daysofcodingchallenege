@@ -1,0 +1,15 @@
+Question link:- 
+
+class Solution {
+  public:
+    int findMoves(int n, vector<int> chairs, vector<int> passengers) {
+         
+         sort(passengers.begin(),passengers.end());
+         sort(chairs.begin(),chairs.end());
+         int ans =0;
+         for(int i =0;i<n;i++){
+             ans += abs(chairs[i]-passengers[i]);
+         }
+        return ans;
+    }
+};
