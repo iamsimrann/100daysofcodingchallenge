@@ -1,0 +1,15 @@
+Question link:- https://tinyurl.com/2f4ye7fp
+
+
+#Function to find the data of nth node from the end of a linked list
+def getNthFromLast(head,n):
+    temp=head
+    for i in range(n):
+        if not head:
+            return -1 
+        head = head.next
+
+    while head:
+        temp=temp.next
+        head=head.next
+    return temp.data
