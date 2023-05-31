@@ -1,0 +1,28 @@
+Problem link:-https://practice.geeksforgeeks.org/problems/frequency-game/1
+
+class Solution{
+public:
+    int LargButMinFreq(int arr[], int n) {
+        // code here
+        unordered_map<int,int> um;
+        for(int i=0 ; i<n ; i++)
+        {
+            um[arr[i]]++;
+        }
+        
+        int m=n;
+        int ans=0;
+        for(auto e:um)
+        {
+            m=min(e.second,m);
+        }
+        for(auto e:um)
+        {
+            if(e.second==m)
+            {
+                ans=max(ans,e.first);
+            }
+        }
+        return ans;
+    }
+};
