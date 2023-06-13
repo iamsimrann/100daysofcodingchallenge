@@ -1,0 +1,9 @@
+question link:- https://practice.geeksforgeeks.org/problems/k-largest-elements4206/1
+
+import heapq
+class Solution:
+
+    def kLargest(self,arr, n, k):
+        # code here
+        heapq.heapify(arr)
+        return heapq.nlargest(k, arr)
