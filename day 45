@@ -1,0 +1,23 @@
+question link:- https://practice.geeksforgeeks.org/problems/chinky-and-diamonds3340/1
+
+
+class Solution {
+  public:
+    long long maxDiamonds(int arr[], int N, int K) {
+        priority_queue<long long int> pq;
+        for(long long int i=0;i<N;i++)
+            pq.push(arr[i]);
+        long long int ans=0;
+        for(long long int i=0;i<K;i++)
+        {
+            long long int x=pq.top();
+            ans+=pq.top();
+            x/=2;
+            pq.pop();
+            // if(x!=0)
+                pq.push(x);
+        }
+        
+        return ans;
+}
+};
