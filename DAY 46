@@ -1,0 +1,55 @@
+QUESTION LINK:- https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1
+
+class Solution {
+  public:
+    string longestPalin (string s) {
+        // code here
+         string str = "";
+
+        // Get the length of the input string
+
+        int n = s.length();
+
+        // Iterate through each character in the input string
+
+        for (int i = 0; i < n; i++) {
+
+            // Initialize two pointers, one starting from the current character and another starting from the next character
+
+            int left = i, right = i;
+
+            // Expand the range of the palindrome while the characters at the two pointers are the same
+
+            while (left >= 0 && s[left] == s[i]) left--;
+
+            while (right < n && s[right] == s[i]) right++;
+
+            // Expand the range of the palindrome while the characters at the two pointers are the same
+
+            while (left >= 0 && right < n && s[left] == s[right]) {
+
+                left--;
+
+                right++;
+
+            }
+
+            // Get the substring that is a palindrome
+
+            string candidate = s.substr(left + 1, right - left - 1);
+
+            // Check if the current palindrome is longer than the previous one
+
+            if (candidate.length() > str.length()) {
+
+                str = candidate;
+
+            }
+
+        }
+
+        // Return the longest palindrome
+
+        return str;
+    }
+};
