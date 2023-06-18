@@ -1,0 +1,27 @@
+Question_link:- 
+https://practice.geeksforgeeks.org/problems/ticket-counter-2731/1
+
+
+class Solution {
+  public:
+    int distributeTicket(int N, int K) {
+            int init = 0 ,  final=N;
+        bool check = true;
+        
+        while(init < final){
+            
+            if(check){
+                if(final - init <=K) return final;
+                else init += K;
+                check = false;
+            }
+            else {
+                if(final - init <=K) return init + 1;
+                else final -= K;
+                check = true;
+            }
+        }
+        
+        return init;
+}
+};
