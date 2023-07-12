@@ -1,0 +1,19 @@
+
+Question link:- https://practice.geeksforgeeks.org/problems/power-of-numbers-1587115620/1
+
+class Solution{
+    public:
+    //You need to complete this fucntion
+    const int md=1e9+7;
+    long long power(int N,int R)
+    {
+       //Your code here
+        if(R==0)    
+            return 1;
+        if(R&1)
+            return N*power(N,R-1)%md;
+        long long temp=power(N,R/2);
+        return temp*temp%md;
+    }
+
+};
